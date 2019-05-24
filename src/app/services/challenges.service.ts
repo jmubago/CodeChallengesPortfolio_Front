@@ -75,18 +75,20 @@ public getChallengeDisplay(){
   return challenge;
 }
 
-  public nonRepeatingCharacterChallenge(text: string){
-      let url = this.getQuery('nonrepeatingcharacter');
+  public cashMachineChallenge(pp: number, ch: number){
+      let url = this.getQuery('cashmachine');
       let body = {
-        string: text
+        purchasePrice: pp,
+        cash: ch
       };
       let headers = this.getHeaders();
+
       return this.http.post(url, body, headers);
   }
 
   // ## Private Methods
   private getQuery(query: string){
-    const url = `https://localhost:4000/${query}`;
+    const url = `http://localhost:4000/api/${query}`;
     return url;
   }
 

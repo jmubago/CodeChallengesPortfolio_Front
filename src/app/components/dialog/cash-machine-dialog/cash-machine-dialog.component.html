@@ -3,18 +3,29 @@
         <span class="title dialog-title">{{data.title}}</span>
     </mat-toolbar-row>
 </mat-toolbar>
-<mat-card-content class='m-0 p-16'>
-    <p>
+<mat-card-content class='cardContent'>
+    <p class='cardContent'>
         {{data.description}}
     </p>
 </mat-card-content>
 <div mat-dialog-content class="report">
     <mat-form-field>
-        <input matInput placeholder="Report title">
-        <!-- <mat-error *ngIf="title.hasError('required')">Write a title</mat-error> -->
+        <input type="number" matInput placeholder="Purchase Price" [(ngModel)]="data.purchasePrice" required>
+        <mat-error *ngIf="title.hasError('required')">Add a purchase price</mat-error>
     </mat-form-field>
 </div>
+<div mat-dialog-content class="report">
+    <mat-form-field>
+        <input type="number" matInput placeholder="Cash" [(ngModel)]="data.cash" required>
+        <mat-error *ngIf="title.hasError('required')">Add cash number</mat-error>
+    </mat-form-field>
+</div>
+<mat-card-content class='cardContent'>
+    <p *ngFor="let result of results" class='cardContent'>
+        The result is: {{result}}
+    </p>
+</mat-card-content>
 <div mat-dialog-actions class="m-0 p-16">
-    <!-- <button mat-button mat-dialog-close color="accent" [mat-dialog-close]="data" cdkFocusInitial>Save</button> -->
+    <button mat-button color="accent" (click)="getChallenge(data)" cdkFocusInitial>Save</button>
     <button mat-raised-button mat-dialog-close color="warn" (click)="onCloseClick()">Close</button>
 </div>

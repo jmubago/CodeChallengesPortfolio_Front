@@ -1,5 +1,8 @@
 import { Component, OnInit,Inject, ViewEncapsulation } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { FormControl, Validators } from '@angular/forms';
+
+import { ChallengesService } from '../../../services/challenges.service';
 
 @Component({
   selector: 'app-cash-machine-dialog',
@@ -9,9 +12,24 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class CashMachineDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<CashMachineDialogComponent>, @Inject(MAT_DIALOG_DATA) private data: any) { }
+  public title = new FormControl('', [Validators.required]);
+  public results;
+
+  constructor(public dialogRef: MatDialogRef<CashMachineDialogComponent>,
+     @Inject(MAT_DIALOG_DATA) private data: any,
+     private challenge: ChallengesService) { }
 
   ngOnInit() {
+  }
+
+  public getChallenge (data){
+    let pp = data.purchasePrice;
+    let ch = data.cash
+    this.challenge.cashMachineChallenge(pp, ch)
+    .subscribe(response => {
+      this.results = response;
+      // console.log(response.result);
+    })
   }
 
    /**

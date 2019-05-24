@@ -5,7 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule,
   MatTooltipModule,
   MatGridListModule,
-  MatCardModule } from '@angular/material';
+  MatCardModule,
+  MatDialogModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -41,6 +42,7 @@ import { AboutComponent } from './components/about/about.component';
     MatCardModule,
     FlexLayoutModule,
     HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

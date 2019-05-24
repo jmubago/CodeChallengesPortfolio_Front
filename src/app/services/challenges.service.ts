@@ -43,32 +43,33 @@ public getChallengeDisplay(){
     {
       title: 'Cash Machine',
       subtitle: 'Coding challenge 1',
-      description: 'A cash machine to calculate the change that has to be returned to the customer',
-      url: 'url 1'
+      cardDescription: 'A cash machine to calculate the change that has to be returned to the customer',
+      dialogDescription: 'hola caracolaaaaaaaaaaa',
+      dialog: 'openCashMachineDialog'
     },
     {
       title: 'Non Repeating Character',
       subtitle: 'Coding challenge 2',
-      description: 'Find out the first non repeated character in a text',
-      url: 'url 2'
+      cardDescription: 'Find out the first non repeated character in a text',
+      dialog: 'openNonRepeatingCharacterDialog'
     },
     {
       title: 'Roman Numbers',
       subtitle: 'Coding challenge 3',
-      description: 'Program that converts a natural number to a Roman number',
-      url: 'url 3'
+      cardDescription: 'Program that converts a natural number to a Roman number',
+      dialog: 'openRomanNumbersDialog'
     },
     {
       title: 'Scale Balancing',
       subtitle: 'Coding challenge 4',
-      description: 'Determine if it´s possible to balance a scale using the least amount of weights, using a maximun amount of 2',
-      url: 'url 4'
+      cardDescription: 'Determine if it´s possible to balance a scale using the least amount of weights, using a maximun amount of 2',
+      dialog: 'openScaleBalancingDialog'
     },
     {
       title: 'Sample sample',
       subtitle: 'Coding challenge 5',
-      description: 'sample',
-      url: 'url 5'
+      cardDescription: 'sample',
+      dialog: 'openCashMachineDialog'
     }
   ];
   return challenge;

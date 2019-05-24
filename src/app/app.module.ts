@@ -6,9 +6,12 @@ import { MatButtonModule,
   MatTooltipModule,
   MatGridListModule,
   MatCardModule,
+  MatInputModule,
+  MatToolbarModule,
   MatDialogModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +22,10 @@ import { NonRepeatingCharacterChallengeComponent } from './components/challenges
 import { RomanNumbersChallengeComponent } from './components/challenges/roman-numbers-challenge/roman-numbers-challenge.component';
 import { ScaleBalancingChallengeComponent } from './components/challenges/scale-balancing-challenge/scale-balancing-challenge.component';
 import { AboutComponent } from './components/about/about.component';
+import { CashMachineDialogComponent } from './components/dialog/cash-machine-dialog/cash-machine-dialog.component';
+import { NonRepeatingCharacterDialogComponent } from './components/dialog/non-repeating-character-dialog/non-repeating-character-dialog.component';
+import { RomanNumbersDialogComponent } from './components/dialog/roman-numbers-dialog/roman-numbers-dialog.component';
+import { ScaleBalancingDialogComponent } from './components/dialog/scale-balancing-dialog/scale-balancing-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +36,11 @@ import { AboutComponent } from './components/about/about.component';
     NonRepeatingCharacterChallengeComponent,
     RomanNumbersChallengeComponent,
     ScaleBalancingChallengeComponent,
-    AboutComponent
+    AboutComponent,
+    CashMachineDialogComponent,
+    NonRepeatingCharacterDialogComponent,
+    RomanNumbersDialogComponent,
+    ScaleBalancingDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +53,19 @@ import { AboutComponent } from './components/about/about.component';
     MatCardModule,
     FlexLayoutModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CashMachineDialogComponent,
+    NonRepeatingCharacterDialogComponent,
+    RomanNumbersDialogComponent,
+    ScaleBalancingDialogComponent
+  ]
 })
 export class AppModule { }

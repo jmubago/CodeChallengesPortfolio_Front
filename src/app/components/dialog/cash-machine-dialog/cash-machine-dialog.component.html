@@ -3,29 +3,31 @@
         <span class="title dialog-title">{{data.title}}</span>
     </mat-toolbar-row>
 </mat-toolbar>
-<mat-card-content class='cardContent'>
+<div mat-dialog-content>
     <p class='cardContent'>
         {{data.description}}
     </p>
-</mat-card-content>
-<div mat-dialog-content class="report">
-    <mat-form-field>
-        <input type="number" matInput placeholder="Purchase Price" [(ngModel)]="data.purchasePrice" required>
-        <mat-error *ngIf="title.hasError('required')">Add a purchase price</mat-error>
-    </mat-form-field>
+    <div>
+        <mat-form-field>
+            <input type="tel" matInput placeholder="Purchase Price" [(ngModel)]="data.purchasePrice" required>
+            <mat-error *ngIf="title.hasError('required')">Add a purchase price</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <input type="tel" matInput placeholder="Cash" [(ngModel)]="data.cash" required>
+            <mat-error *ngIf="title.hasError('required')">Add cash number</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        Return cash:
+        <p *ngFor="let result of results" class='cardContent'>
+            {{result}}
+            <mat-divider></mat-divider>
+        </p>
+    </div>
 </div>
-<div mat-dialog-content class="report">
-    <mat-form-field>
-        <input type="number" matInput placeholder="Cash" [(ngModel)]="data.cash" required>
-        <mat-error *ngIf="title.hasError('required')">Add cash number</mat-error>
-    </mat-form-field>
-</div>
-<mat-card-content class='cardContent'>
-    <p *ngFor="let result of results" class='cardContent'>
-        The result is: {{result}}
-    </p>
-</mat-card-content>
 <div mat-dialog-actions class="m-0 p-16">
-    <button mat-button color="accent" (click)="getChallenge(data)" cdkFocusInitial>Save</button>
+    <button mat-button color="accent" (click)="getChallenge(data)" cdkFocusInitial>Calculate</button>
     <button mat-raised-button mat-dialog-close color="warn" (click)="onCloseClick()">Close</button>
 </div>

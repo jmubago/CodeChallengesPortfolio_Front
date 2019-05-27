@@ -62,12 +62,30 @@ export class ChallengedisplayComponent implements OnInit {
     });
   }
 
-  public openRomanNumbersDialog(){
-    console.log('cash machine dialog');
+  public openRomanNumbersDialog(data: any){
+    const scrollStrategy = this.overlay.scrollStrategies.reposition();
+    this.dialog.open(RomanNumbersDialogComponent, {
+      data: {
+        title: data.title,
+        description: data.dialogDescription
+      },
+      autoFocus: false,
+      // maxHeight: '90%',
+      scrollStrategy
+    });
   }
 
-  public openScaleBalancingDialog(){
-    console.log('cash machine dialog');
+  public openScaleBalancingDialog(data: any){
+    const scrollStrategy = this.overlay.scrollStrategies.reposition();
+    this.dialog.open(ScaleBalancingDialogComponent, {
+      data: {
+        title: data.title,
+        description: data.dialogDescription
+      },
+      autoFocus: false,
+      // maxHeight: '90%',
+      scrollStrategy
+    });
   }
 
 }

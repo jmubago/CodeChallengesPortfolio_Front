@@ -1,17 +1,29 @@
-<div style='margin: 50px'>
+<div fxLayout="column" fxLayoutAlign="center center">
     <img class='profile' src="../../../assets/profilePic.jpeg" alt="profile picture">
-</div>
 
-
-
-<div style='margin: 100px'>
-    <button [routerLink]="['/challenge']" mat-raised-button color="primary" matTooltip="Info about the action" matTooltipPosition="below">
+    <mat-card class="home_card">
+        <mat-card-header>
+            <mat-card-title>Jose Martinez de Ubago Alvarez de Sotomayor</mat-card-title>
+            <mat-card-subtitle>Wannabe Full Stack Developer</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                Hello there!
+            </p>
+            <p>
+                Here are some coding challenges I had to do for different job interviews. You can check them out and also take a peak at my github for my coding skills.
+            </p>
+            <p>
+                Do not hesitate to contact me!
+            </p>
+        </mat-card-content>
+    </mat-card>
+    <div class="home_buttons" fxLayout="row" fxLayoutGap="20px">
+        <button [routerLink]="['/challenge']" mat-raised-button color="primary" matTooltip="Info about the action" matTooltipPosition="below">
         Challenges
-    </button>
-</div>
-
-<div style='margin: 100px'>
-    <button [routerLink]="['/about']" mat-raised-button color="primary" matTooltip="Info about the action" matTooltipPosition="below">
+        </button>
+        <button [routerLink]="['/about']" mat-raised-button color="primary" matTooltip="Info about the action" matTooltipPosition="below">
         About me
-    </button>
+        </button>
+    </div>
 </div>

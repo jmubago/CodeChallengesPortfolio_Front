@@ -1,3 +1,27 @@
-<p>
-  non-repeating-character-dialog works!
-</p>
+<mat-toolbar class="mat-primary">
+    <mat-toolbar-row>
+        <span class="title dialog-title">{{data.title}}</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div mat-dialog-content>
+    <p class='cardContent'>
+        {{data.description}}
+    </p>
+    <div>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Add a text" [(ngModel)]="data.text" required>
+            <mat-error *ngIf="title.hasError('required')">Add a text</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        Character:
+        <p *ngFor="let result of results" class='cardContent'>
+            {{result}}
+            <mat-divider></mat-divider>
+        </p>
+    </div>
+</div>
+<div mat-dialog-actions class="m-0 p-16">
+    <button mat-button color="accent" (click)="getChallenge(data)" cdkFocusInitial>Calculate</button>
+    <button mat-raised-button mat-dialog-close color="warn" (click)="onCloseClick()">Close</button>
+</div>

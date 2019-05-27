@@ -30,7 +30,7 @@ public getChallengeDisplay(){
       cardDescription: 'Find out the first non repeated character in a text',
       dialog: 'openNonRepeatingCharacterDialog',
       github: 'https://github.com/jmubago/CodeChallengesPortfolio_Server/blob/master/server/challenges/NonRepeatingCharacterChallenge.js',
-      dialogDescription: "A parameter will be passed which will contain only alphabetic characters and spaces, and return the first non-repeating character. For example: is the parameter is 'agettkgaeee' then your program should return k. The string will always contain at least one character and there will always be at least one non-repeating character."
+      dialogDescription: "A parameter will be passed which will contain only alphabetic characters and spaces, and return the first non-repeating character. For example: if the parameter is 'agettkgaeee' then your program should return 'k'. The string will always contain at least one character and there will always be at least one non-repeating character."
     },
     {
       title: 'Roman Numbers',
@@ -68,6 +68,16 @@ public getChallengeDisplay(){
       let body = {
         purchasePrice: pp,
         cash: ch
+      };
+      let headers = this.getHeaders();
+
+      return this.http.post(url, body, headers);
+  }
+
+  public nonRepeatingCharacter(text: string): Observable<any>{
+    let url = this.getQuery('nonrepeatingcharacter');
+      let body = {
+        string: text
       };
       let headers = this.getHeaders();
 

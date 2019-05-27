@@ -49,8 +49,17 @@ export class ChallengedisplayComponent implements OnInit {
     });
   }
 
-  public openNonRepeatingCharacterDialog(){
-    console.log('cash machine dialog');
+  public openNonRepeatingCharacterDialog(data: any){
+    const scrollStrategy = this.overlay.scrollStrategies.reposition();
+    this.dialog.open(NonRepeatingCharacterDialogComponent, {
+      data: {
+        title: data.title,
+        description: data.dialogDescription
+      },
+      autoFocus: false,
+      // maxHeight: '90%',
+      scrollStrategy
+    });
   }
 
   public openRomanNumbersDialog(){

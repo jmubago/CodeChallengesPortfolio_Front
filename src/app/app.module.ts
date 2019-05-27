@@ -7,6 +7,7 @@ import { MatButtonModule,
   MatGridListModule,
   MatCardModule,
   MatInputModule,
+  MatDividerModule,
   MatToolbarModule,
   MatDialogModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
@@ -57,7 +58,8 @@ import { ScaleBalancingDialogComponent } from './components/dialog/scale-balanci
     MatInputModule,
     MatToolbarModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

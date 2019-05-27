@@ -18,10 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ChallengedisplayComponent } from './components/challenges/challengedisplay/challengedisplay.component';
-import { CashMachineChallengeComponent } from './components/challenges/cash-machine-challenge/cash-machine-challenge.component';
-import { NonRepeatingCharacterChallengeComponent } from './components/challenges/non-repeating-character-challenge/non-repeating-character-challenge.component';
-import { RomanNumbersChallengeComponent } from './components/challenges/roman-numbers-challenge/roman-numbers-challenge.component';
-import { ScaleBalancingChallengeComponent } from './components/challenges/scale-balancing-challenge/scale-balancing-challenge.component';
 import { AboutComponent } from './components/about/about.component';
 import { CashMachineDialogComponent } from './components/dialog/cash-machine-dialog/cash-machine-dialog.component';
 import { NonRepeatingCharacterDialogComponent } from './components/dialog/non-repeating-character-dialog/non-repeating-character-dialog.component';
@@ -33,10 +29,6 @@ import { ScaleBalancingDialogComponent } from './components/dialog/scale-balanci
     AppComponent,
     HomeComponent,
     ChallengedisplayComponent,
-    CashMachineChallengeComponent,
-    NonRepeatingCharacterChallengeComponent,
-    RomanNumbersChallengeComponent,
-    ScaleBalancingChallengeComponent,
     AboutComponent,
     CashMachineDialogComponent,
     NonRepeatingCharacterDialogComponent,

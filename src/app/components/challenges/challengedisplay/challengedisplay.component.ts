@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
+import { Overlay } from '@angular/cdk/overlay';
 
 import { ChallengesService } from '../../../services/challenges.service';
 import { CashMachineDialogComponent } from '../../dialog/cash-machine-dialog/cash-machine-dialog.component';
@@ -15,7 +16,9 @@ import { ScaleBalancingDialogComponent } from '../../dialog/scale-balancing-dial
 export class ChallengedisplayComponent implements OnInit {
   public challengeCards: any;
 
-  constructor(private challenge: ChallengesService, public dialog: MatDialog) { }
+  constructor(private challenge: ChallengesService,
+    public dialog: MatDialog,
+    private overlay: Overlay) { }
 
   ngOnInit() {
     this.challengeCards = this.challenge.getChallengeDisplay();
@@ -34,19 +37,16 @@ export class ChallengedisplayComponent implements OnInit {
    * @param data card object with properties
    */
   public openCashMachineDialog(data: any){
-
-    const createDialog = this.dialog.open(CashMachineDialogComponent, {
+    const scrollStrategy = this.overlay.scrollStrategies.reposition();
+    this.dialog.open(CashMachineDialogComponent, {
       data: {
         title: data.title,
         description: data.dialogDescription
-      }
+      },
+      autoFocus: false,
+      // maxHeight: '90%',
+      scrollStrategy
     });
-
-    createDialog.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
-      // this.animal = result;
-    });
-
   }
 
   public openNonRepeatingCharacterDialog(){

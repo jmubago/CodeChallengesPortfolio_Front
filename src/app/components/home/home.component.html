@@ -4,14 +4,17 @@
     <mat-card class="home_card">
         <mat-card-header>
             <mat-card-title>Jose Martinez de Ubago Alvarez de Sotomayor</mat-card-title>
-            <mat-card-subtitle>Wannabe Full Stack Developer</mat-card-subtitle>
+            <mat-card-subtitle>Full Stack Developer Padawan</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <p>
                 Hello there!
             </p>
             <p>
-                Here are some coding challenges I had to do for different job interviews. You can check them out and also take a peak at my github for my coding skills.
+                In order to be one with the Force I have gone throught some <del>heavy</del> coding training. Click on "Challenges" and check some of the interview coding exercises I have done so far.
+            </p>
+            <p>
+                If you like what I am capable of doing you can visit my LinkedIn profile or continue scrolling to check some of my super powers (I assure you there are no mind tricks here).
             </p>
             <p>
                 Do not hesitate to contact me!
@@ -22,8 +25,54 @@
         <button [routerLink]="['/challenge']" mat-raised-button color="primary" matTooltip="Info about the action" matTooltipPosition="below">
         Challenges
         </button>
-        <button [routerLink]="['/about']" mat-raised-button color="primary" matTooltip="Info about the action" matTooltipPosition="below">
-        About me
-        </button>
+        <a class="button_link" target="_blank" href="https://www.linkedin.com/in/josemartinezdeubago/"><button mat-raised-button color="primary" matTooltip="Check the code in Github" matTooltipPosition="below">
+            LinkedIn
+        </button></a>
     </div>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h4>Coding Languages</h4>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Angular 2+</p>
+            <p>Node.js</p>
+            <p>PHP</p>
+            <p>MySql</p>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle style="margin-top: 5px;">This site uses Angular 7 and Node.js</mat-card-subtitle>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h4>Human Languages</h4>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Spanish</p>
+            <p>English</p>
+            <p>French</p>
+            <p>Gallego</p>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle style="margin-top: 5px;">Almost like C3PO</mat-card-subtitle>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h4>Previous life</h4>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Yep, for 4 years I worked as an architect (yes, those who design buildings).</p>
+            <p>Until the Force called upon me, so I just had to join</p>
+            <p>If you are interested check my old portfolio</p>
+            <a class="button_link" target="_blank" href="https://drive.google.com/open?id=0B1JYnzRqC9jQV0dPTThMakRRcUE"><button mat-raised-button color="primary" matTooltip="Check the code in Github" matTooltipPosition="below">
+                    Portfolio
+                </button></a>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>

@@ -8,6 +8,7 @@ import { MatButtonModule,
   MatCardModule,
   MatInputModule,
   MatDividerModule,
+  MatExpansionModule,
   MatToolbarModule,
   MatDialogModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
@@ -49,6 +50,7 @@ import { ScaleBalancingDialogComponent } from './components/dialog/scale-balanci
     MatDialogModule,
     MatInputModule,
     MatToolbarModule,
+    MatExpansionModule,
     FormsModule,
     ReactiveFormsModule,
     MatDividerModule

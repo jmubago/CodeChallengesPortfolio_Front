@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    --card-color: #e7ecf5d4;
+}
+
 html,
 body {
     height: 100%;
@@ -11,6 +15,16 @@ body {
 }
 
 .mat-card {
-    background-color: #e7ecf5d4;
-    margin: 9px;
+    background-color: var(--card-color);
+    margin: 10px;
+}
+
+.mat-accordion {
+    margin: 10px;
+    width: 70%;
+    background-color: var(--card-color);
+}
+
+.mat-expansion-panel {
+    background-color: var(--card-color);
 }

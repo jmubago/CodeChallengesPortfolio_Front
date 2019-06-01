@@ -10,7 +10,7 @@
                     {{card.cardDescription}}
                 </p>
             </mat-card-content>
-            <mat-card-actions>
+            <mat-card-actions fxLayoutAlign="center center">
                 <button (click)="callDialog(card)" mat-raised-button color="primary" matTooltip="Check the challenge" matTooltipPosition="below">
                     Go to challenge!
                 </button>
@@ -23,6 +23,6 @@
     <div fxLayout="column" fxLayoutAlign="center center">
         <button class="button_backHome" [routerLink]="['/home']" mat-raised-button color="primary" matTooltip="Info about the action" matTooltipPosition="below">
                     Back home
-            </button>
+        </button>
     </div>
 </div>

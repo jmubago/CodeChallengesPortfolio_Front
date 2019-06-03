@@ -120,7 +120,8 @@ public getChallengeDisplay(){
    * @param query string with url
    */
   private getQuery(query: string){
-    const url = `http://localhost:4000/api/${query}`;
+    // const url = `http://localhost:4000/api/${query}`;
+    const url = `https://codechallengejm.herokuapp.com/api/${query}`;
     return url;
   }
 

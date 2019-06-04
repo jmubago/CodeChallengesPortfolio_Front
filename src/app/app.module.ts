@@ -20,7 +20,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ChallengedisplayComponent } from './components/challenges/challengedisplay/challengedisplay.component';
-import { AboutComponent } from './components/about/about.component';
 import { CashMachineDialogComponent } from './components/dialog/cash-machine-dialog/cash-machine-dialog.component';
 import { NonRepeatingCharacterDialogComponent } from './components/dialog/non-repeating-character-dialog/non-repeating-character-dialog.component';
 import { RomanNumbersDialogComponent } from './components/dialog/roman-numbers-dialog/roman-numbers-dialog.component';
@@ -31,7 +30,6 @@ import { ScaleBalancingDialogComponent } from './components/dialog/scale-balanci
     AppComponent,
     HomeComponent,
     ChallengedisplayComponent,
-    AboutComponent,
     CashMachineDialogComponent,
     NonRepeatingCharacterDialogComponent,
     RomanNumbersDialogComponent,

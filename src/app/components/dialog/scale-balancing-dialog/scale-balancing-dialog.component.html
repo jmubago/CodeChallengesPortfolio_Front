@@ -7,39 +7,44 @@
     <p class='cardContent'>
         {{data.description}}
     </p>
-    <div>
-        <mat-form-field>
-            <input type="number" matInput placeholder="Left weight scale" [(ngModel)]="data.weighScale01" required>
-            <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input type="number" matInput placeholder="Right weight scale" [(ngModel)]="data.weighScale02" required>
-            <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
-        </mat-form-field>
+    <div *ngIf="loading">
+        <mat-spinner></mat-spinner>
     </div>
-    <div>
-        <mat-form-field>
-            <input type="number" matInput placeholder="Weight 01" [(ngModel)]="data.weight01" required>
-            <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input type="number" matInput placeholder="Weight 02" [(ngModel)]="data.weight02" required>
-            <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input type="number" matInput placeholder="Weight 03" [(ngModel)]="data.weight03" required>
-            <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input type="number" matInput placeholder="Weight 04" [(ngModel)]="data.weight04" required>
-            <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
-        </mat-form-field>
-    </div>
-    <div>
-        Return:
-        <p class='cardContent'>
-            {{results}}
-        </p>
+    <div *ngIf="!loading">
+        <div>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Left weight scale" [(ngModel)]="data.weighScale01" required>
+                <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Right weight scale" [(ngModel)]="data.weighScale02" required>
+                <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Weight 01" [(ngModel)]="data.weight01" required>
+                <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Weight 02" [(ngModel)]="data.weight02" required>
+                <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Weight 03" [(ngModel)]="data.weight03" required>
+                <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Weight 04" [(ngModel)]="data.weight04" required>
+                <mat-error *ngIf="title.hasError('required')">Add a weight</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            Return:
+            <p class='cardContent'>
+                {{results}}
+            </p>
+        </div>
     </div>
 </div>
 <div mat-dialog-actions class="m-0 p-16">

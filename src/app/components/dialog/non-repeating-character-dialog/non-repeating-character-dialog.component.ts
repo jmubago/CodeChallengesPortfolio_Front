@@ -14,6 +14,7 @@ export class NonRepeatingCharacterDialogComponent implements OnInit {
 
   public title = new FormControl('', [Validators.required]);
   public results: any[] = [];
+  public loading: boolean;
 
   constructor(public dialogRef: MatDialogRef<NonRepeatingCharacterDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -31,13 +32,16 @@ export class NonRepeatingCharacterDialogComponent implements OnInit {
       this.results = ['Please, enter at least one character'];
       return;
     }
+    this.loading = true;
     let text = data.text;
     this.challenge.nonRepeatingCharacter(text)
     .subscribe(item => {
       if(!item.result){
         this.results = ['There are no non repetitive characters'];
+        this.loading = false;
       }else{
         this.results = Object.values(item['result']);
+        this.loading = false;
       }
     })
   }

@@ -14,6 +14,7 @@ export class ScaleBalancingDialogComponent implements OnInit {
 
   public title = new FormControl('', [Validators.required]);
   public results: string;
+  public loading: boolean;
 
   constructor(public dialogRef: MatDialogRef<ScaleBalancingDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -27,7 +28,7 @@ export class ScaleBalancingDialogComponent implements OnInit {
    * @param data 
    */
   public getChallenge (data){
-    console.log('getChallenge', data);
+    this.loading = true;
     let weighScale = [];
     let weights = [];
     weighScale[0] = data.weighScale01;
@@ -38,8 +39,8 @@ export class ScaleBalancingDialogComponent implements OnInit {
     weights[3] = (data.weight04 != 0) ? data.weight04 : undefined;
     this.challenge.scaleBalancingChallenge(weighScale, weights)
     .subscribe(item => {
-      console.log('result', item);
         this.results = item.result;
+        this.loading = false;
     })
   }
 

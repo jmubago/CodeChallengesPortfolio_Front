@@ -14,6 +14,7 @@ export class RomanNumbersDialogComponent implements OnInit {
 
   public title = new FormControl('', [Validators.required]);
   public results: string;
+  public loading: boolean;
 
   constructor(public dialogRef: MatDialogRef<RomanNumbersDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -31,10 +32,12 @@ export class RomanNumbersDialogComponent implements OnInit {
       this.results = 'Please, enter a natural number';
       return;
     }
+    this.loading = true;
     let text = data.text;
     this.challenge.romanNumbersChallenge(text)
     .subscribe(item => {
         this.results = item.result;
+        this.loading = false;
     })
   }
 

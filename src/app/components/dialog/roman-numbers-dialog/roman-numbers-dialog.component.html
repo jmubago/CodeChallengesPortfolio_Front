@@ -7,17 +7,22 @@
     <p class='cardContent'>
         {{data.description}}
     </p>
-    <div>
-        <mat-form-field>
-            <input type="number" matInput placeholder="Add a number" [(ngModel)]="data.text" required>
-            <mat-error *ngIf="title.hasError('required')">Add a number</mat-error>
-        </mat-form-field>
+    <div *ngIf="loading">
+        <mat-spinner></mat-spinner>
     </div>
-    <div>
-        Roman Number:
-        <p class='cardContent'>
-            {{results}}
-        </p>
+    <div *ngIf="!loading">
+        <div>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Add a number" [(ngModel)]="data.text" required>
+                <mat-error *ngIf="title.hasError('required')">Add a number</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            Roman Number:
+            <p class='cardContent'>
+                {{results}}
+            </p>
+        </div>
     </div>
 </div>
 <div mat-dialog-actions class="m-0 p-16">

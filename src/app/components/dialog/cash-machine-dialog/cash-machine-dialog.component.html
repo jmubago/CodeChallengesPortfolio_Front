@@ -7,24 +7,29 @@
     <p class='cardContent'>
         {{data.description}}
     </p>
-    <div>
-        <mat-form-field>
-            <input type="tel" matInput placeholder="Purchase Price" [(ngModel)]="data.purchasePrice" required>
-            <mat-error *ngIf="title.hasError('required')">Add a purchase price</mat-error>
-        </mat-form-field>
+    <div *ngIf="loading">
+        <mat-spinner></mat-spinner>
     </div>
-    <div>
-        <mat-form-field>
-            <input type="tel" matInput placeholder="Cash" [(ngModel)]="data.cash" required>
-            <mat-error *ngIf="title.hasError('required')">Add cash number</mat-error>
-        </mat-form-field>
-    </div>
-    <div>
-        Return cash:
-        <p *ngFor="let result of results" class='cardContent'>
-            {{result}}
-            <mat-divider></mat-divider>
-        </p>
+    <div *ngIf="!loading">
+        <div>
+            <mat-form-field>
+                <input type="tel" matInput placeholder="Purchase Price" [(ngModel)]="data.purchasePrice" required>
+                <mat-error *ngIf="title.hasError('required')">Add a purchase price</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input type="tel" matInput placeholder="Cash" [(ngModel)]="data.cash" required>
+                <mat-error *ngIf="title.hasError('required')">Add cash number</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            Return cash:
+            <p *ngFor="let result of results" class='cardContent'>
+                {{result}}
+                <mat-divider></mat-divider>
+            </p>
+        </div>
     </div>
 </div>
 <div mat-dialog-actions class="m-0 p-16">

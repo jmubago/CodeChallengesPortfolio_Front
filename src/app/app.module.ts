@@ -10,6 +10,7 @@ import { MatButtonModule,
   MatDividerModule,
   MatExpansionModule,
   MatToolbarModule,
+  MatProgressSpinnerModule,
   MatDialogModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -48,6 +49,7 @@ import { ScaleBalancingDialogComponent } from './components/dialog/scale-balanci
     FlexLayoutModule,
     HttpClientModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     MatInputModule,
     MatToolbarModule,
     MatExpansionModule,

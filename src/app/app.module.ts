@@ -24,6 +24,7 @@ import { CashMachineDialogComponent } from './components/dialog/cash-machine-dia
 import { NonRepeatingCharacterDialogComponent } from './components/dialog/non-repeating-character-dialog/non-repeating-character-dialog.component';
 import { RomanNumbersDialogComponent } from './components/dialog/roman-numbers-dialog/roman-numbers-dialog.component';
 import { ScaleBalancingDialogComponent } from './components/dialog/scale-balancing-dialog/scale-balancing-dialog.component';
+import { KaprekarConstanDialogComponent } from './components/dialog/kaprekar-constan-dialog/kaprekar-constan-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ScaleBalancingDialogComponent } from './components/dialog/scale-balanci
     CashMachineDialogComponent,
     NonRepeatingCharacterDialogComponent,
     RomanNumbersDialogComponent,
-    ScaleBalancingDialogComponent
+    ScaleBalancingDialogComponent,
+    KaprekarConstanDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ import { ScaleBalancingDialogComponent } from './components/dialog/scale-balanci
     CashMachineDialogComponent,
     NonRepeatingCharacterDialogComponent,
     RomanNumbersDialogComponent,
-    ScaleBalancingDialogComponent
+    ScaleBalancingDialogComponent,
+    KaprekarConstanDialogComponent
   ]
 })
 export class AppModule { }

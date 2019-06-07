@@ -7,6 +7,7 @@ import { CashMachineDialogComponent } from '../../dialog/cash-machine-dialog/cas
 import { NonRepeatingCharacterDialogComponent } from '../../dialog/non-repeating-character-dialog/non-repeating-character-dialog.component';
 import { RomanNumbersDialogComponent } from '../../dialog/roman-numbers-dialog/roman-numbers-dialog.component';
 import { ScaleBalancingDialogComponent } from '../../dialog/scale-balancing-dialog/scale-balancing-dialog.component';
+import { KaprekarConstanDialogComponent } from '../../dialog/kaprekar-constan-dialog/kaprekar-constan-dialog.component';
 
 @Component({
   selector: 'app-challengedisplay',
@@ -88,4 +89,16 @@ export class ChallengedisplayComponent implements OnInit {
     });
   }
 
+  public openKaprekarsConstantDialog(data: any){
+    const scrollStrategy = this.overlay.scrollStrategies.reposition();
+    this.dialog.open(KaprekarConstanDialogComponent, {
+      data: {
+        title: data.title,
+        description: data.dialogDescription
+      },
+      autoFocus: false,
+      // maxHeight: '90%',
+      scrollStrategy
+    });
+  }
 }

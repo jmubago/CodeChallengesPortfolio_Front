@@ -22,7 +22,7 @@ public getChallengeDisplay(){
       cardDescription: 'A cash machine to calculate the change that has to be returned to the customer',
       dialog: 'openCashMachineDialog',
       github: 'https://github.com/jmubago/CodeChallengesPortfolio_Server/blob/master/server/challenges/CashMachineChallenge.js',
-      dialogDescription:  "Design a cash register program. You will be given two decimal numbers, the first is the purchase price (PP) of the item, the second is the cash (CH) given by the customer. Your register currently has the following bills/coins  within it: 'PENNY': .01, 'NICKEL': .05, 'DIME': .10, 'QUARTER': .25, 'HALF DOLLAR': .50, 'ONE': 1.00, 'TWO': 2.00, 'FIVE': 5.00, 'TEN': 10.00, 'TWENTY': 20.00, 'FIFTY': 50.00, 'ONE HUNDRED': 100.00. The aim is to calculate the change that has to be returned to the customer."
+      dialogDescription:  "Design a cash register program, you will be given two decimal numbers, the first is the purchase price (PP) of the item, the second is the cash (CH) given by the customer. \n Your register currently has the following bills/coins  within it: 'PENNY': .01, 'NICKEL': .05, 'DIME': .10, 'QUARTER': .25, 'HALF DOLLAR': .50, 'ONE': 1.00, 'TWO': 2.00, 'FIVE': 5.00, 'TEN': 10.00, 'TWENTY': 20.00, 'FIFTY': 50.00, 'ONE HUNDRED': 100.00. The aim is to calculate the change that has to be returned to the customer."
     },
     {
       title: 'Non Repeating Character',
@@ -47,6 +47,14 @@ public getChallengeDisplay(){
       dialog: 'openScaleBalancingDialog',
       github: 'https://github.com/jmubago/CodeChallengesPortfolio_Server/blob/master/server/challenges/ScaleBalancingChallenge.js',
       dialogDescription: "Given two arrays with integers, the first being the weights on a balance scale (left, and right sides) and the secon array being a list of available weigts as positive integers. Your goal is to determine if you can balance the scale by using the least amount of weights from the list, but using at most only 2 weights. For example array1 = [5,9] and array2 = [1,2,6,7] then this means there is a balance scale with a weight of 5 on the left side and 9 on the right side. It is in fact possible to balance this scale by adding a 6 to the left side from the list of weights and adding a 2 to the right side. Both scales will now equal 11 and they are perfectly balanced. Your program should return a comma separated string of the weights that were used from the list in ascending order, do for this example your program should return the string '2,6'. There will only ever be one unique solution and the list of avilable weights will not be empty. It is also possible to add two weights to only one side of the scale to balance it. If it is not possible to balance the scale then your program should return the string 'not possible'"
+    },
+    {
+      title: 'Kaprekars Number',
+      subtitle: 'Coding challenge 5',
+      cardDescription: 'How many iterations until reaching Kaprekan´s constant',
+      dialog: 'openKaprekarsConstantDialog',
+      github: 'https://github.com/jmubago/CodeChallengesPortfolio_Server/blob/master/server/challenges/KaprekarsConstantChallenge.js',
+      dialogDescription: "Have the function KaprekarsConstant(num) take the num parameter being passed which will be a 4-digit number with at least two distinct digits. Your program should perform the following routine on the number: Arrange the digits in descending order and in ascending order (adding zeroes to fit it to a 4-digit number), and subtract the smaller number from the bigger number. Then repeat the previous step. Performing this routine will always cause you to reach a fixed number: 6174. Then performing the routine on 6174 will always give you 6174 (7641 - 1467 = 6174). Your program should return the number of times this routine must be performed until 6174 is reached. For example: if num is 3524 your program should return 3 because of the following steps: (1) 5432 - 2345 = 3087, (2) 8730 - 0378 = 8352, (3) 8532 - 2358 = 6174."
     }
   ];
   return challenge;
@@ -111,6 +119,14 @@ public getChallengeDisplay(){
       return this.http.post(url, body, headers);
   }
 
+  public kaprekarsConstantChallenge(num: number){
+    let url = this.getQuery('kaprekarsconstant');
+      let body = {
+        number: num
+      };
+      let headers = this.getHeaders();
+      return this.http.post(url, body, headers);
+  }
 
 
   // ## Private Methods

@@ -1,0 +1,32 @@
+<mat-toolbar class="mat-primary">
+    <mat-toolbar-row>
+        <span class="title dialog-title">{{data.title}}</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div mat-dialog-content>
+    <p class='cardContent'>
+        {{data.description}}
+    </p>
+    <div *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="!loading">
+        <div>
+            <mat-form-field>
+                <input type="number" matInput placeholder="4 digit number" [(ngModel)]="data.number" required>
+                <mat-error *ngIf="title.hasError('required')">Write a 4 digit number</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            Return cash:
+            <p class='cardContent'>
+                {{results}}
+                <mat-divider></mat-divider>
+            </p>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="m-0 p-16">
+    <button mat-button color="accent" (click)="getChallenge(data)" cdkFocusInitial>Calculate</button>
+    <button mat-raised-button mat-dialog-close color="warn" (click)="onCloseClick()">Close</button>
+</div>
